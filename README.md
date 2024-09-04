@@ -4,13 +4,13 @@
 
 ## Overview
 In this guide, I will walk you through the steps to create an Active Directory lab on your personal computer using Oracle VirtualBox. We will set up a domain controller, add users programmatically using PowerShell, and configure networking components to simulate a mini corporate network. This lab is ideal for learning how Active Directory works and enhancing your understanding of Windows networking.
-##Note
+## Note
 I have done this in an extension to my home SOC lab, so I don't have a screenshot for Virtualbox because I am using Proxmox Type 1 Hypervisor, other than that I have used 10.10.10.0/24 network pool for my SOC lab but for this tutorial, I have used 172.16.0.0/24.
 
 ### Contents
 - [Prerequisites](#prerequisites)
 - [Step 1: Install Oracle VirtualBox](#step-1-install-oracle-virtualbox)
-- [Step 2: Download Windows 10 and Server 2019 ISOs](#step-2-download-windows-10-and-server-2019-isos)
+- [Step 2: Download Windows 10 and Server 2022 ISOs](#step-2-download-windows-10-and-server-2022-isos)
 - [Step 3: Set Up the Domain Controller](#step-3-set-up-the-domain-controller)
 - [Step 4: Network Configuration](#step-4-network-configuration)
 - [Step 5: Install Active Directory](#step-5-install-active-directory)
@@ -24,7 +24,7 @@ I have done this in an extension to my home SOC lab, so I don't have a screensho
 ### Prerequisites
 Before we begin, ensure you have:
 - Oracle VirtualBox installed
-- Windows 10 and Server 2019 ISO images downloaded
+- Windows 10 and Server 2022 ISO images downloaded
 - At least 8GB of RAM for VirtualBox to run smoothly
 - Basic understanding of networking and virtual machines
 
@@ -39,29 +39,29 @@ The first step is to download and install Oracle VirtualBox, which we will use t
 
 ---
 
-### Step 2: Download Windows 10 and Server 2019 ISOs
+### Step 2: Download Windows 10 and Server 2022 ISOs
 We need two operating systems:
 - Windows 10 (Client)
-- Server 2019 (Domain Controller)
+- Server 2022 (Domain Controller)
 
-1. Go to the official Microsoft websites for [Windows 10](https://www.microsoft.com/software-download/windows10ISO) and [Server 2019](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019) and download the ISO files.
+1. Go to the official Microsoft websites for [Windows 10](https://www.microsoft.com/software-download/windows10ISO) and [Server 2022](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022) and download the ISO files.
 2. Store the ISO files in an accessible location (e.g., your desktop).
 
 ---
 
 ### Step 3: Set Up the Domain Controller
-In VirtualBox, we'll first create a virtual machine (VM) to serve as our Domain Controller (DC), running Windows Server 2019.
+In VirtualBox, we'll first create a virtual machine (VM) to serve as our Domain Controller (DC), running Windows Server 2022.
 
 1. Open VirtualBox and click `New`.
-2. Name the VM `DC` (Domain Controller) and select "Windows 2019 64-bit."
+2. Name the VM `DC` (Domain Controller) and select "Windows 2022 64-bit."
 3. Assign **2GB of RAM** and accept all other defaults.
 4. Before starting the VM, configure the network by adding two NICs:
    - One for external communication (NAT).
    - One for internal communication (Internal Network).
 
 After creating the VM:
-1. Boot the VM and attach the Server 2019 ISO.
-2. Install Server 2019, and when prompted, select the "Desktop Experience" version.
+1. Boot the VM and attach the Server 2022 ISO.
+2. Install Server 2022, and when prompted, select the "Desktop Experience" version.
 3. Set the password for the administrator as `Password1`.
 
 ---

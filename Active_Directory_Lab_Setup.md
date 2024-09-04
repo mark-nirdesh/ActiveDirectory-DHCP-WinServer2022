@@ -2,7 +2,9 @@
 # How to Set Up a Basic Home Lab Running Active Directory (Oracle VirtualBox) and Add Users with PowerShell
 
 ## Overview
-In this guide, I will walk you through the steps to create a full-blown Active Directory lab on your personal computer using Oracle VirtualBox. We will set up a domain controller, add users programmatically using PowerShell, and configure networking components to simulate a mini corporate network. This lab is ideal for learning how Active Directory works and enhancing your understanding of Windows networking.
+In this guide, I will walk you through the steps to create an Active Directory lab on your personal computer using Oracle VirtualBox. We will set up a domain controller, add users programmatically using PowerShell, and configure networking components to simulate a mini corporate network. This lab is ideal for learning how Active Directory works and enhancing your understanding of Windows networking.
+##Note
+I have done this in an extension to my home SOC lab, so I don't have a screenshot for Virtualbox because I am using Proxmox Type 1 Hypervisor, other than that I have used 10.10.10.0/24 network pool for my SOC lab but for this tutorial, I have used 172.16.0.0/24.
 
 ### Contents
 - [Prerequisites](#prerequisites)
@@ -162,6 +164,6 @@ Next, we will create another virtual machine running Windows 10, which will act 
 ### Conclusion
 You now have a fully functional Active Directory lab environment running on VirtualBox. This lab includes a domain controller with users created via PowerShell and a Windows 10 client that is part of the domain. This setup simulates a small-scale corporate network and is a fantastic way to practice AD and networking skills.
 
-Feel free to clone this repository and use the provided resources and PowerShell scripts to replicate this lab. If you encounter any issues, refer to the [video tutorial](#) or leave a comment!
+Feel free to clone this repository and use the provided resources and PowerShell scripts to replicate this lab. If you encounter any issues, please contact me!
 
 ---
